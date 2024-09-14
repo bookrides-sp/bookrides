@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Rides</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .ads-space {
+            height: 90px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+        }
+        .rides-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Ads Placeholder -->
+    <div class="ads-space">
+        <p>Ad Space (Google Ads)</p>
+    </div>
+
+    <div class="rides-container">
+        <h2>Available Rides</h2>
+        <div id="rideList"></div>
+    </div>
+
+    <script>
+        const rides = [
+            { customer: 'Customer 1', miles: 10, earnings: 20 },
+            { customer: 'Customer 2', miles: 15, earnings: 30 }
+        ];
+
+        let rideHtml = '';
+        rides.forEach(ride => {
+            rideHtml += `
+                <p>${ride.customer}: ${ride.miles} miles - Earn $${ride.earnings}</p>
+                <button onclick="acceptRide('${ride.customer}')">Accept</button>
+                <hr>
+            `;
+        });
+        document.getElementById('rideList').innerHTML = rideHtml;
+
+        function acceptRide(customer) {
+            alert(`${customer}'s ride accepted!`);
+        }
+    </script>
+
+</body>
+</html>

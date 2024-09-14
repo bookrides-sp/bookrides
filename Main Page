@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Booking Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .ads-space {
+            margin-top: 10px;
+            height: 90px; /* Adjust based on Google Ads size */
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Ads Placeholder -->
+    <div class="ads-space">
+        <!-- Google AdSense will be placed here -->
+        <p>Ad Space (Google Ads)</p>
+    </div>
+
+    <div class="container">
+        <button onclick="location.href='book-ride.html'">I want to book a ride</button>
+        <button onclick="location.href='driver-registration.html'">I'm a driver</button>
+    </div>
+</body>
+</html>

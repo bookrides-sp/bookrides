@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Ride</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .form-container {
+            margin-top: 50px;
+        }
+        .ads-space {
+            height: 90px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+        }
+        .driver-list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Ads Placeholder -->
+    <div class="ads-space">
+        <p>Ad Space (Google Ads)</p>
+    </div>
+
+    <div class="form-container">
+        <h2>Enter Ride Details</h2>
+        <form>
+            <input type="text" id="from" placeholder="Enter From Address"><br><br>
+            <input type="text" id="to" placeholder="Enter To Address"><br><br>
+            <button type="button" onclick="calculateRide()">Find Drivers</button>
+        </form>
+
+        <div id="results" class="driver-list"></div>
+    </div>
+
+    <script>
+        function calculateRide() {
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+
+            // Calculate total miles (this will use a real API like Google Maps in production)
+            const totalMiles = Math.floor(Math.random() * 20) + 1; // Mock miles for now
+            const drivers = [
+                { name: "Driver 1", costPerMile: 2 },
+                { name: "Driver 2", costPerMile: 1.8 },
+                { name: "Driver 3", costPerMile: 2.2 }
+            ];
+
+            let resultHtml = `<h3>Total Miles: ${totalMiles}</h3>`;
+            drivers.forEach(driver => {
+                const cost = driver.costPerMile * totalMiles;
+                resultHtml += `<p>${driver.name}: $${cost.toFixed(2)}</p>`;
+            });
+            document.getElementById('results').innerHTML = resultHtml;
+        }
+    </script>
+
+</body>
+</html>

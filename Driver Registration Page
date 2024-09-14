@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .form-container {
+            margin-top: 50px;
+        }
+        .ads-space {
+            height: 90px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Ads Placeholder -->
+    <div class="ads-space">
+        <p>Ad Space (Google Ads)</p>
+    </div>
+
+    <div class="form-container">
+        <h2>Driver Registration</h2>
+        <form>
+            <input type="text" id="name" placeholder="Name"><br><br>
+            <input type="text" id="carModel" placeholder="Car Model"><br><br>
+            <input type="number" id="pricePerMile" placeholder="Price Per Mile"><br><br>
+            <input type="text" id="pincode" placeholder="Pincode"><br><br>
+            <label>Available Now?</label>
+            <select id="availability">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+            <button type="button" onclick="registerDriver()">Register</button>
+        </form>
+
+        <div id="registrationStatus"></div>
+    </div>
+
+    <script>
+        function registerDriver() {
+            const name = document.getElementById('name').value;
+            const carModel = document.getElementById('carModel').value;
+            const pricePerMile = document.getElementById('pricePerMile').value;
+            const pincode = document.getElementById('pincode').value;
+            const availability = document.getElementById('availability').value;
+
+            // Save the driver's details (this would be saved in a real database)
+            console.log({ name, carModel, pricePerMile, pincode, availability });
+            document.getElementById('registrationStatus').innerHTML = 'Driver Registered Successfully!';
+        }
+    </script>
+
+</body>
+</html>
